@@ -5,7 +5,6 @@ class LessonsController<ApplicationController
   end
 
   def show
-    # @next_lesson = @lesson.next
     @lesson = Lesson.find(params[:id])
     render :show
   end
