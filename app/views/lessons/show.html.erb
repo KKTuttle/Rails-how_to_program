@@ -1,5 +1,5 @@
-<%= link_to 'Previous', lesson_path(@lesson) %>
-<%= link_to 'Next', lesson_path(@lesson) %>
+<%= link_to 'Previous', lesson_path(@lesson.previous ? @lesson.previous : @lesson) %>
+<%= link_to 'Next', lesson_path(@lesson.next ? @lesson.next : @lesson) %>
 
 <!-- <button name="previous" id=''>Previous</button> -->
 <!-- <button name="next">Next</button> -->
