@@ -1,0 +1,13 @@
+<h1><%= @chapter.name %></h1>
+
+<ul>
+  <% @chapter.sections.each do |section|%>
+    <li><%= link_to section.name, section_path(@section) %></li>
+  <%end%>
+</ul>
+
+
+<p><%= link_to "Return to Sections", chapters_path %></p>
+<p><%= link_to "Edit", edit_chapter_path(@chapter) %></p>
+<p><%= link_to "Delete", chapter_path(@chapter),
+  :data=>{:confirm => "Are you sure?", :method => 'delete'}%></p>
