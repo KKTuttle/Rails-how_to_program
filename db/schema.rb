@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20160907200822) do
   enable_extension "plpgsql"
 
   create_table "lessons", force: :cascade do |t|
-    t.string  "title"
-    t.string  "content"
-    t.integer "number"
-    t.integer "section_id"
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "number"
+    t.integer  "section_id"
   end
 
   create_table "sections", force: :cascade do |t|
