@@ -1,6 +1,8 @@
 <%= render 'layouts/errors', :object => @lesson %>
 
 <%= form_for @lesson do |f| %>
+  <%= f.label :number %>
+  <%= f.text_field :number %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :content %>

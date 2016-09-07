@@ -5,6 +5,7 @@ class LessonsController<ApplicationController
   end
 
   def show
+    # @next_lesson = @lesson.next
     @lesson = Lesson.find(params[:id])
     render :show
   end
@@ -45,6 +46,6 @@ class LessonsController<ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title, :content)
+    params.require(:lesson).permit(:number, :title, :content)
   end
 end
