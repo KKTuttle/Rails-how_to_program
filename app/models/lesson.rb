@@ -8,11 +8,11 @@ class Lesson<ActiveRecord::Base
 
   def next
     next_number = self.number + 1
-    return Lesson.find_by(number: next_number)
+    return Lesson.find_by(section: self.section, number: next_number)
   end
 
   def previous
     previous_number = self.number - 1
-    return Lesson.find_by(number: previous_number)
+    return Lesson.find_by(section: self.section, number: previous_number)
   end
 end
