@@ -1,9 +1,9 @@
-<%= link_to 'Previous', lesson_path(@lesson.previous ? @lesson.previous : @lesson) %>
-<%= link_to 'Next', lesson_path(@lesson.next ? @lesson.next : @lesson) %>
+<%= link_to 'Previous', section_lesson_path(@section, @lesson.previous ? @lesson.previous : @lesson) %>
+<%= link_to 'Next', section_lesson_path(@section, @lesson.next ? @lesson.next : @lesson) %>
 
 <h1><%= @lesson.title %></h1>
 <h1><%= @lesson.content %></h1>
 
-<p><%= link_to 'Return to lists', lessons_path %></p>
-<p><%= link_to 'Edit', edit_lesson_path(@lesson) %></p>
-<p><%= link_to 'Delete', lesson_path(@lesson), :data=>{:confirm => 'Are you sure?', :method => 'delete'} %></p>
+<p><%= link_to 'Return to sections', sections_path %></p>
+<p><%= link_to 'Edit', edit_section_lesson_path(@section, @lesson) %></p>
+<p><%= link_to 'Delete', section_lesson_path(@section, @lesson), :data=>{:confirm => 'Are you sure?', :method => 'delete'} %></p>

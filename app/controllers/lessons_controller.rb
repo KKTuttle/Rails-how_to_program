@@ -1,46 +1,51 @@
 class LessonsController<ApplicationController
-  def index
-    @lessons = Lesson.all
-    render :index
-  end
+  # def index
+  #   @lessons = Lesson.all
+  #   render :index
+  # end
 
   def show
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     render :show
   end
 
   def new
-    @lesson = Lesson.new
-    render :new
+    @section = Section.find(params[:section_id])
+    @lesson = @section.lessons.new
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @section = Section.find(params[:section_id])
+    @lesson = @section.lessons.new(lesson_params)
     if @lesson.save
-      redirect_to lessons_path
+      redirect_to section_path(@section)
     else
       render :new
     end
   end
 
   def edit
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     render :edit
   end
 
   def update
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to lessons_path
+      redirect_to section_path(@section)
     else
       render :edit
     end
   end
 
   def destroy
+    @section = Section.find(params[:section_id])
     @lesson =Lesson.find(params[:id])
     @lesson.destroy
-    redirect_to lessons_path
+    redirect_to section_path(@section)
   end
 
   private
