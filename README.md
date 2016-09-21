@@ -1,7 +1,7 @@
 #  EpiFlickr
 ## *By Katarina Tuttle*
 
-A Flickr Clone that has authorization using Devise, image upload using Paperclip, and allows users to upload images, comment on others' images, tag their own images, and add favorite images. 
+A how to program is a clone of https://www.learnhowtoprogram.com. 
 
 ## Technologies Used
 
@@ -56,4 +56,4 @@ Navigate to `localhost:3000` in your browser of choice.
 License
 -------
 _This software is licensed under the MIT license._<br>
-Copyright (c) 2016 **Stephanie Gurung & Katarina Tuttle**
+Copyright (c) 2016 ** Katarina Tuttle**
